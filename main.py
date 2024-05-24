@@ -22,7 +22,7 @@ keyboard_2.add(button_5, button_6)
 
 @dp.message_handler(commands='start')
 async def start(message: types.Message):
-    await message.answer('Привет, я твой бот', reply_markup=keyboard)
+    await message.answer('Привет, я твой бот', reply_markup=get_keyboard_1())
 
 @dp.message_handler(lambda message: message.text == 'Кнопка 1')
 async def button_1_click(message: types.Message):
@@ -40,7 +40,7 @@ async def button_3_click(message: types.Message):
 
 @dp.message_handler(lambda message: message.text == 'Перейти на следующую клавиатуру')
 async def button_2_click(message: types.Message):
-    await message.answer('Тут ты можешь попросить бота отправить фото хомяка', reply_markup=keyboard_2)
+    await message.answer('Тут ты можешь попросить бота отправить фото хомяка', reply_markup=get_keyboard_2())
 
 @dp.message_handler(lambda message: message.text == 'Кнопка 4')
 async def button_4_click(message: types.Message):
@@ -52,7 +52,7 @@ async def button_3_click(message: types.Message):
 
 @dp.message_handler(lambda message: message.text == 'Вернуться на 1 клавиатуру')
 async def button_2_click(message: types.Message):
-    await message.answer('Тут ты можешь попросить бота отправить фото  кошки', reply_markup=keyboard)
+    await message.answer('Тут ты можешь попросить бота отправить фото  кошки', reply_markup=get_keyboard_1())
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
